@@ -6,7 +6,7 @@ config.debug = false;
 config.profile = false;
 config.devtool = '#source-map';
 config.entry = './src/index';
-config.plugins = config.plugins.concat([
+config.plugins = [
   new webpack.optimize.OccurenceOrderPlugin(true),
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.UglifyJsPlugin({
@@ -23,7 +23,7 @@ config.plugins = config.plugins.concat([
       NODE_ENV: JSON.stringify('production')
     }
   })
-]);
+];
 
 config.output = {
   path: './dist',

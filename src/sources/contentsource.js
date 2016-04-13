@@ -15,7 +15,10 @@ class ContentSource {
     if (this.contents[key]) {
       
       Promise.resolve()
-        .then(() => ContentActions.receivedResults(this.contents[key]))
+        .then(() => {
+          setTimeout(() => ContentActions.receivedResults(this.contents[key]), 500)
+          
+        })
       
     } else {
     

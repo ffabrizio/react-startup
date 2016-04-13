@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
+import Radium from 'radium'
+import styles from '../styles'
 import ContentActions from '../actions/contentactions'
+
 
 class App extends Component {
   
@@ -8,22 +11,23 @@ class App extends Component {
   }
   
   render() {
+
     let button = this.props.Content.loading ? 
-      <button disabled>Updating ...</button> : 
-      <button onClick={this.handleRefresh}>Update</button>
+      <button style={styles.buttons} disabled>Updating ...</button> : 
+      <button style={styles.buttons} onClick={this.handleRefresh}>Update</button>
       
     return (
       
-      <main>
+      <div style={styles.base}>
       
         <h1>{this.props.Content.data.title}</h1>
         <p>{this.props.Content.data.body}</p>
         {button}
         
-      </main>
+      </div>
       
     )
   }
 }
 
-export default App
+export default Radium(App)
