@@ -10,7 +10,7 @@ class ContentSource {
   }
   
   sync() {
-    let key = Math.floor(Math.random() * (4 - 1)) + 1
+    let key = Math.floor(Math.random() * (50 - 1)) + 1
     
     if (this.contents[key]) {
       

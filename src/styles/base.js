@@ -1,6 +1,6 @@
 const base = {
   background: '#EFEFEF',
-  padding: '10px'
+  padding: '1.1em'
 }
 
 export default base
