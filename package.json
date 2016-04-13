@@ -1,14 +1,14 @@
 {
-  "name": "hot",
+  "name": "react-startup",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bootstrapper for React+Alt apps",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
     "dist": "cross-env NODE_ENV=production webpack -p --progress"
   },
-  "author": "",
+  "author": "fabs",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.7.6",
