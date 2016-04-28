@@ -25,6 +25,11 @@ config.plugins = [
   })
 ];
 
+config.externals = {
+  "react": "React",
+  "react-dom": "ReactDOM"
+}
+
 config.output = {
   path: './dist',
   pathInfo: true,
