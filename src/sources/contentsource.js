@@ -10,6 +10,14 @@ class ContentSource {
   }
   
   sync() {
+    Promise.resolve()
+      .then(() => {
+        setTimeout(() => ContentActions.receivedResults(window.page), 500)
+        
+      })
+  }
+  
+  syncFromRemote() {
     let key = Math.floor(Math.random() * (50 - 1)) + 1
     
     if (this.contents[key]) {

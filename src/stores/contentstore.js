@@ -7,14 +7,12 @@ class ContentStore {
   constructor() {
     
     this.state = { 
-      loading: false, 
-      data: { 
-        title: 'Hello', 
-        body: 'Something' 
-      }
+      loading: false,
+      data: {}
     }
 
     this.bindActions(ContentActions)
+    ContentSource.sync()
   }
   
   onSync() {
