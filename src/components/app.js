@@ -3,7 +3,7 @@ import Radium from 'radium'
 import styles from '../styles'
 import ContentActions from '../actions/contentactions'
 
-
+@Radium
 class App extends Component {
   
   handleRefresh() {
@@ -30,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App)
+export default App
