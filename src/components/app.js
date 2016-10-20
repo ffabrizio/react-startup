@@ -3,7 +3,6 @@ import Radium from 'radium'
 import styles from '../styles'
 import ContentActions from '../actions/contentactions'
 
-@Radium
 class App extends Component {
   
   handleRefresh() {
