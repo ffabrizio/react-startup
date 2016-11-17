@@ -26,8 +26,8 @@ config.plugins = [
 ];
 
 config.externals = {
-  "react": "React",
-  "react-dom": "ReactDOM"
+  'react': 'React',
+  'react-dom': 'ReactDOM'
 }
 
 config.output = {
