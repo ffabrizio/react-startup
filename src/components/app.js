@@ -1,27 +1,74 @@
 import React, {Component} from 'react'
+import Customer from './customer'
+import Actions from '../actions'
+
 import styles from '../styles'
-import ContentActions from '../actions/contentactions'
 
 class App extends Component {
   
-  handleRefresh() {
-    ContentActions.sync()
+  createCustomer() {
+    Actions.createCustomer({
+      id: "CUST01",
+      invitationCode: "5c8d0db5-1b9c-4343-94de-97927e44de52",
+      firstName: "Fabio",
+      lastName: "Fabrizio",
+      emailAddress: "ffabrizio@gmail.com",
+      address: {
+        postcode: "W4 2PJ",
+        addressLines: [
+          "65 Prebend Gardens"
+        ],
+        city: "London"
+      },
+      deliveryInstructions: "",
+      subscription: {
+        items: [
+          { id: "PRD01", quantity: 1},
+          { id: "PRD01", quantity: 1},
+          { id: "PRD01", quantity: 1}
+        ]
+      }
+    })
+  }
+
+  updateCustomer() {
+    Actions.saveCustomer({
+      id: "CUST01",
+      invitationCode: "5c8d0db5-1b9c-4343-94de-97927e44de52",
+      firstName: "John",
+      lastName: "Snow",
+      emailAddress: "ffabrizio@gmail.com",
+      address: {
+        postcode: "W4 2PJ",
+        addressLines: [
+          "65 Prebend Gardens"
+        ],
+        city: "London"
+      },
+      deliveryInstructions: "",
+      subscription: {
+        items: [
+          { id: "PRD01", quantity: 2},
+          { id: "PRD01", quantity: 2},
+          { id: "PRD01", quantity: 2}
+        ]
+      }
+    })
+  }
+
+  loadCustomer() {
+    Actions.loadCustomer("CUST01")
   }
   
   render() {
 
-    let button = this.props.Content.loading ? 
-      <button style={styles.buttons} disabled>Updating ...</button> : 
-      <button style={styles.buttons} onClick={this.handleRefresh}>Update</button>
-      
     return (
       
       <div style={styles.base}>
-      
-        <h1>{this.props.Content.data.title}</h1>
-        <p>{this.props.Content.data.body}</p>
-        {button}
-        
+        <Customer customerState={this.props.customerState} />
+        <button style={styles.buttons} onClick={this.createCustomer}>Create</button> &nbsp; 
+        <button style={styles.buttons} onClick={this.updateCustomer}>Update</button> &nbsp; 
+        <button style={styles.buttons} onClick={this.loadCustomer}>Load</button> &nbsp; 
       </div>
       
     )

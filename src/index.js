@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AltContainer from 'alt-container'
 import App from './components/app'
-import ContentStore from './stores/contentstore'
+import CustomerStore from './stores/customerStore'
+
+let customerState = CustomerStore.getState()
 
 ReactDOM.render(
   <AltContainer 
-    stores={[ContentStore]}
+    stores={[CustomerStore]}
     inject={{
-      Content: () => ContentStore.getState()
+      customerState: () => CustomerStore.getState()
     }}>
     <App/>
   </AltContainer>
