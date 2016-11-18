@@ -1,5 +1,5 @@
 import alt from '../alt'
-import Actions from '../actions'
+import Actions from '../actions/customerActions'
 import CustomerDataSource from '../sources/customerDataSource'
 
 class CustomerStore {
@@ -14,10 +14,10 @@ class CustomerStore {
     this.bindActions(Actions)
   }
   
-  onCreateCustomer(customer) {
+  onCreateCustomer(customer, token) {
     this.setState({loading: true})
 
-    CustomerDataSource.create(customer)
+    CustomerDataSource.create(customer, token)
       .then(data => {
         return data.json()
       })
@@ -30,10 +30,10 @@ class CustomerStore {
       })    
   }
   
-  onSaveCustomer(customer) {
+  onSaveCustomer(customer, token) {
     this.setState({loading: true})
 
-    CustomerDataSource.update(customer)
+    CustomerDataSource.update(customer, token)
       .then(data => {
         return data.json()
       })
@@ -46,10 +46,10 @@ class CustomerStore {
       })  
   }
 
-  onLoadCustomer(id) {
+  onLoadCustomer(id, token) {
     this.setState({loading: true})
 
-    CustomerDataSource.load(id)
+    CustomerDataSource.load(id, token)
       .then(data => {
         return data.json()
       })
