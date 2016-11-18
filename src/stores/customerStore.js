@@ -14,10 +14,10 @@ class CustomerStore {
     this.bindActions(Actions)
   }
   
-  onCreateCustomer(customer, token) {
+  onCreateCustomer(model) {
     this.setState({loading: true})
 
-    CustomerDataSource.create(customer, token)
+    CustomerDataSource.create(model)
       .then(data => {
         return data.json()
       })
@@ -30,10 +30,10 @@ class CustomerStore {
       })    
   }
   
-  onSaveCustomer(customer, token) {
+  onSaveCustomer(model) {
     this.setState({loading: true})
 
-    CustomerDataSource.update(customer, token)
+    CustomerDataSource.update(model)
       .then(data => {
         return data.json()
       })
@@ -46,10 +46,10 @@ class CustomerStore {
       })  
   }
 
-  onLoadCustomer(id, token) {
+  onLoadCustomer(model) {
     this.setState({loading: true})
 
-    CustomerDataSource.load(id, token)
+    CustomerDataSource.load(model)
       .then(data => {
         return data.json()
       })
