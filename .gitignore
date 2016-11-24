@@ -32,5 +32,8 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
+# Chrome debug data
+.vscode/chrome
+
 # App dist
 dist

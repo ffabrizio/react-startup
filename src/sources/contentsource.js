@@ -16,7 +16,7 @@ class ContentSource {
       
       Promise.resolve()
         .then(() => {
-          console.log("cached")
+          console.log('Fetch from cache ...')
           ContentActions.receivedResults(this.contents[key])
         })
       

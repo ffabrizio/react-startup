@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
@@ -9,12 +10,14 @@ module.exports = {
     './src/index'
   ],
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new WriteFilePlugin()
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/',
+    devtoolModuleFilenameTemplate: '../[resource-path]'
   },
   module: {
     loaders: [{

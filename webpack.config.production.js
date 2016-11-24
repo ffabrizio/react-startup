@@ -1,5 +1,5 @@
-var webpack = require('webpack');
-var config = require('./webpack.config.base.js');
+const webpack = require('webpack');
+const config = require('./webpack.config.base.js');
 
 config.bail = true;
 config.debug = false;
