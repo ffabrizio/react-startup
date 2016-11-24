@@ -3,14 +3,13 @@ import styles from '../styles'
 import ContentActions from '../actions/contentactions'
 
 class App extends Component {
-  
-  handleRefresh() {
+
+  componentDidMount() {
     ContentActions.sync()
   }
   
   render() {
-
-    let button = this.props.Content.loading ? 
+    let button = this.props.content.loading ? 
       <button style={styles.buttons} disabled>Updating ...</button> : 
       <button style={styles.buttons} onClick={this.handleRefresh}>Update</button>
       
@@ -18,14 +17,19 @@ class App extends Component {
       
       <div style={styles.base}>
       
-        <h1>{this.props.Content.data.title}</h1>
-        <p>{this.props.Content.data.body}</p>
+        <h1>{this.props.content.data.title}</h1>
+        <h2>{this.props.content.data.id}</h2>
+        <p>{this.props.content.data.body}</p>
         {button}
         
       </div>
-      
     )
   }
+
+  handleRefresh() {
+    ContentActions.sync()
+  }
+
 }
 
 export default App

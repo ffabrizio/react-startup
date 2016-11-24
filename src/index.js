@@ -8,7 +8,7 @@ ReactDOM.render(
   <AltContainer 
     stores={[ContentStore]}
     inject={{
-      Content: () => ContentStore.getState()
+      content: () => ContentStore.getState()
     }}>
     <App/>
   </AltContainer>

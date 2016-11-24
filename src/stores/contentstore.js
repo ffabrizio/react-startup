@@ -12,7 +12,6 @@ class ContentStore {
     }
 
     this.bindActions(ContentActions)
-    ContentSource.sync()
   }
   
   onSync() {

@@ -16,8 +16,8 @@ class ContentSource {
       
       Promise.resolve()
         .then(() => {
-          setTimeout(() => ContentActions.receivedResults(this.contents[key]), 500)
-          
+          console.log("cached")
+          ContentActions.receivedResults(this.contents[key])
         })
       
     } else {
